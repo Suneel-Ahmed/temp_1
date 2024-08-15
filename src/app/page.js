@@ -1,8 +1,12 @@
 import React from 'react'
-
+import Layout from '@/components/layout/Layout'
+import Hero from '@/components/home/hero/Hero'
 const page = () => {
   return (
-    <div className='w-full h-screen flex justify-center items-center bg-red-400 text-[60px] text-white' >page</div>
+    <Layout>
+      <Hero/>
+      
+    </Layout>
   )
 }
 
