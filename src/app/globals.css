@@ -11,6 +11,8 @@
 
 body{
     background-color: black;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .home_card_1{
@@ -20,3 +22,4 @@ body{
     background-size: cover;
     backdrop-filter: opacity(100);
 }
+

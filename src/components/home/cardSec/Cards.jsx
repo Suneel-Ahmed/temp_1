@@ -16,7 +16,7 @@ const Cards = () => {
         <h3 className="text-white mt-[30px] text-[30px]">POURQUOI MOI ?</h3>
 
         <div className="w-full flex mt-[50px]  justify-center gap-[40px]">
-          <div className=' relative group hover:scale-[110%] ease-in-out transition-all   overflow-hidden bg-cover bg-center bg-[url("/images/home/cardBg/card-1.png")]  grayscale w-[400px]   h-[300px]'>
+          <div className=' relative group hover:scale-[110%] ease-in-out  duration-[0.8s]   overflow-hidden bg-cover bg-center bg-[url("/images/home/cardBg/card-1.png")]  grayscale w-[400px]   h-[300px]'>
             <div className="absolute group-hover:hidden flex   top-0 gap-[20px]  justify-center items-center flex-col left-0 w-full h-full bg-white/80">
               <Image
                 src={icon_1}
@@ -46,7 +46,7 @@ const Cards = () => {
               </p>
             </div>
           </div>
-          <div className=' relative group   overflow-hidden bg-cover bg-center bg-[url("/images/home/cardBg/card-2.png")]  grayscale w-[400px]   h-[300px]'>
+          <div className=' relative group hover:scale-[110%] ease-in-out  duration-[0.8s]   overflow-hidden bg-cover bg-center bg-[url("/images/home/cardBg/card-2.png")]  grayscale w-[400px]   h-[300px]'>
             <div className="absolute group-hover:hidden flex   top-0 gap-[20px]  justify-center items-center flex-col left-0 w-full h-full bg-white/80">
               <Image
                 src={icon_2}
@@ -77,7 +77,7 @@ const Cards = () => {
               </p>
             </div>
           </div>
-          <div className=' relative group   overflow-hidden bg-cover bg-center bg-[url("/images/home/cardBg/card-3.png")]  grayscale w-[400px]   h-[300px]'>
+          <div className=' relative group  hover:scale-[110%] ease-in-out  duration-[0.8s]   overflow-hidden bg-cover bg-center bg-[url("/images/home/cardBg/card-3.png")]  grayscale w-[400px]   h-[300px]'>
             <div className="absolute group-hover:hidden flex   top-0 gap-[20px]  justify-center items-center flex-col left-0 w-full h-full bg-white/80">
               <Image
                 src={icon_3}
