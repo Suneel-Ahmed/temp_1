@@ -8,10 +8,10 @@ import call_icon from '../../../public/images/UI/footer/call.svg'
 const Footer = () => {
   return (
     <footer className='mt-auto ' >
-      <div className='flex  px-[200px] text-white justify-center items-center gap-[50px] h-[150px]' >
+      <div className='flex  px-[200px] max-xl:px-[100px] max-lg:px-[50px]  text-white justify-center items-center max-md:gap-[20px] gap-[50px] h-[150px]' >
               <h1 className='text-[20px]' >Contact</h1>
               <div className='w-[3px] h-[91px] bg-white rounded-[20px]' />
-              <div className='flex gap-[40px]' >
+              <div className='flex max-md:flex-col max-md:gap-[20px] gap-[40px]' >
                 <div className='flex items-center gap-[10px]' >
                   <Image src={mail_icon} className='w-[20px] h-auto' alt='alexctlr.pro@gmail.com' title='alexctlr.pro@gmail.com' width={500} height={500} />
                   <p>  alexctlr.pro@gmail.com</p>

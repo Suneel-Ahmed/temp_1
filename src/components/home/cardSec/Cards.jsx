@@ -7,16 +7,16 @@ import icon_3 from "../../../../public/images/home/cardBg/icon-3.svg";
 const Cards = () => {
   return (
     <div className="w-full flex flex-col">
-      <div className="px-[200px] w-full py-[50px] gap-[20px] flex  justify-center flex-col items-center min-h-[200px]">
-        <h1 className="text-[50px] text-white">MONTEUR VIDÉO FREELANCE</h1>
-        <p className="text-[19px] text-white">
+      <div className="px-[200px] max-xl:px-[100px] max-lg:px-[50px]  w-full py-[50px] gap-[20px] flex  justify-center flex-col items-center min-h-[200px]">
+        <h1 className=" text-[clamp(25px,3vw,50px)] text-center text-white">MONTEUR VIDÉO FREELANCE</h1>
+        <p className=" text-[clamp(16px,2vw,20px)] text-center text-white">
           dédié à donner vie à vos projets avec précision et passion
         </p>
         <div className="w-[300px] mt-[30px] h-[10px] rounded-[20px]  flex justify-center items-center bg-white" />
-        <h3 className="text-white mt-[30px] text-[30px]">POURQUOI MOI ?</h3>
+        <h3 className="text-white mt-[30px] text-center text-[clamp(25px,3vw,30px)]">POURQUOI MOI ?</h3>
 
-        <div className="w-full flex mt-[50px]  justify-center gap-[40px]">
-          <div className=' relative group hover:scale-[110%] ease-in-out  duration-[0.8s]   overflow-hidden bg-cover bg-center bg-[url("/images/home/cardBg/card-1.png")]  grayscale w-[400px]   h-[300px]'>
+        <div className="w-full flex max-lg:flex-col mt-[50px]  justify-center gap-[40px]">
+          <div className=' relative group max-lg:w-full hover:scale-[110%] ease-in-out  duration-[0.8s]   overflow-hidden bg-cover bg-center bg-[url("/images/home/cardBg/card-1.png")]  grayscale w-[400px]   h-[300px]'>
             <div className="absolute group-hover:hidden flex   top-0 gap-[20px]  justify-center items-center flex-col left-0 w-full h-full bg-white/80">
               <Image
                 src={icon_1}
@@ -46,7 +46,7 @@ const Cards = () => {
               </p>
             </div>
           </div>
-          <div className=' relative group hover:scale-[110%] ease-in-out  duration-[0.8s]   overflow-hidden bg-cover bg-center bg-[url("/images/home/cardBg/card-2.png")]  grayscale w-[400px]   h-[300px]'>
+          <div className=' relative group max-lg:w-full hover:scale-[110%] ease-in-out  duration-[0.8s]   overflow-hidden bg-cover bg-center bg-[url("/images/home/cardBg/card-2.png")]  grayscale w-[400px]   h-[300px]'>
             <div className="absolute group-hover:hidden flex   top-0 gap-[20px]  justify-center items-center flex-col left-0 w-full h-full bg-white/80">
               <Image
                 src={icon_2}
@@ -77,7 +77,7 @@ const Cards = () => {
               </p>
             </div>
           </div>
-          <div className=' relative group  hover:scale-[110%] ease-in-out  duration-[0.8s]   overflow-hidden bg-cover bg-center bg-[url("/images/home/cardBg/card-3.png")]  grayscale w-[400px]   h-[300px]'>
+          <div className=' relative group  max-lg:w-full hover:scale-[110%] ease-in-out  duration-[0.8s]   overflow-hidden bg-cover bg-center bg-[url("/images/home/cardBg/card-3.png")]  grayscale w-[400px]   h-[300px]'>
             <div className="absolute group-hover:hidden flex   top-0 gap-[20px]  justify-center items-center flex-col left-0 w-full h-full bg-white/80">
               <Image
                 src={icon_3}

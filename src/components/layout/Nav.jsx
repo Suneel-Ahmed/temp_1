@@ -12,7 +12,7 @@ const Nav = () => {
 
   return (
     <>
-    <div className='w-full h-[120px]  bg-black  px-[200px] max-xl:px-[100px] max-lg:px-[50px] fixed  text-white text-[50px] flex justify-between items-center text-center' >
+    <div className='w-full h-[120px] z-[999999] bg-black  px-[200px] max-xl:px-[100px] max-lg:px-[50px] fixed  text-white text-[50px] flex justify-between items-center text-center' >
       <div>
         <Image width={500} height={500} src={logo} alt='logo' className='w-[clamp(50px,4vw,90px)] h-auto' />
       </div>
