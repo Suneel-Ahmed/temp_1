@@ -1,23 +1,159 @@
-import React from "react";
+"use client"
+import React , {useRef} from "react";
 import Image from "next/image";
 import icon_1 from "../../../../public/images/home/cardBg/icon-1.svg";
 import icon_2 from "../../../../public/images/home/cardBg/icon-2.svg";
 import icon_3 from "../../../../public/images/home/cardBg/icon-3.svg";
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
+
+
+
 const Cards = () => {
+const containerRef = useRef()
+const heading_1 = useRef()
+const heading_2 = useRef()
+const heading_3 = useRef()
+const heading_para = useRef()
+const borderline = useRef()
+const para_2= useRef()
+const card_1 = useRef()
+const card_2 = useRef()
+const card_3 = useRef()
+
+  useGSAP(()=>{
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: 'center center',
+        end: `+=${window.innerHeight * (window.innerWidth >= 1024 ? 2 : 4)}`,
+        scrub: 1,
+        pin: true,
+        markers : true,
+        pinSpacing: true,
+      },
+    });
+
+    tl.fromTo(
+      heading_1.current,
+      {
+        
+        alpha : 0,
+        
+      },{
+       alpha : 1 ,
+      }
+    )
+    tl.fromTo(
+      heading_2.current,
+      {
+        
+        alpha : 0,
+        
+      },{
+       alpha : 1 ,
+      }
+      
+    )
+    tl.fromTo(
+      heading_3.current,
+      {
+        
+        alpha : 0,
+        
+      },{
+       alpha : 1 ,
+      }
+     
+    )
+    tl.fromTo(
+      heading_para.current,
+      {
+        
+        alpha : 0,
+        
+      },{
+       alpha : 1 ,
+      }
+      
+    )
+    tl.fromTo(
+      borderline.current,
+      {
+        
+        alpha : 0,
+        
+      },{
+       alpha : 1 ,
+      }
+     , "<" 
+    )
+    tl.fromTo(
+      para_2.current,
+      {
+        
+        alpha : 0,
+        
+      },{
+       alpha : 1 ,
+      }
+    
+    )
+    // card 
+    tl.fromTo(
+      card_1.current,
+      {
+        top : "100px",
+        alpha : 0,
+        
+      },{
+        top : "0px",
+       alpha : 1 ,
+      }
+    
+    )
+    tl.fromTo(
+      card_2.current,
+      {
+        top : "100px",
+        alpha : 0,
+        
+      },{
+        top : "0px",
+       alpha : 1 ,
+      }
+    
+    )
+    tl.fromTo(
+      card_3.current,
+      {
+        top : "100px",
+        alpha : 0,
+        
+      },{
+        top : "0px",
+       alpha : 1 ,
+      }
+    
+    )
+
+
+   
+
+  },{scope: containerRef})
+
   return (
-    <div className="w-full flex flex-col">
+    <div  ref={containerRef} className="w-full min-h-screen items-center justify-center flex flex-col">
       <div className="px-[200px] max-xl:px-[100px] max-lg:px-[50px]  w-full py-[50px] gap-[20px] flex  justify-center flex-col items-center min-h-[200px]">
-        <h1 className=" text-[clamp(25px,3vw,50px)] text-center text-white">MONTEUR VIDÉO FREELANCE</h1>
-        <p className=" text-[clamp(16px,2vw,20px)] text-center text-white">
+        <h1  className=" text-[clamp(25px,3vw,50px)] text-center text-white"> <span ref={heading_1} > MONTEUR </span> <span ref={heading_2}> VIDÉO </span> <span ref={heading_3}> FREELANCE </span></h1>
+        <p ref={heading_para} className=" text-[clamp(16px,2vw,20px)] text-center text-white">
           dédié à donner vie à vos projets avec précision et passion
         </p>
-        <div className="w-[300px] mt-[30px] h-[10px] rounded-[20px]  flex justify-center items-center bg-white" />
-        <h3 className="text-white mt-[30px] text-center text-[clamp(25px,3vw,30px)]">POURQUOI MOI ?</h3>
+        <div ref={borderline} className="w-[300px] mt-[30px] h-[10px] rounded-[20px]  flex justify-center items-center bg-white" />
+        <h3 ref={para_2} className="text-white mt-[30px] text-center text-[clamp(25px,3vw,30px)]">POURQUOI MOI ?</h3>
 
         <div className="w-full flex max-lg:flex-col mt-[50px]  justify-center gap-[40px]">
-          <div className=' relative group max-lg:w-full hover:scale-[110%] ease-in-out  duration-[0.8s]   overflow-hidden bg-cover bg-center bg-[url("/images/home/cardBg/card-1.png")]  grayscale w-[400px]   h-[300px]'>
+          <div ref={card_1} className=' relative  group max-lg:w-full hover:scale-[110%] ease-in-out  duration-[0.8s]   overflow-hidden bg-cover bg-center bg-[url("/images/home/cardBg/card-1.png")]  grayscale w-[400px]   h-[300px]'>
             <div className="absolute group-hover:hidden flex   top-0 gap-[20px]  justify-center items-center flex-col left-0 w-full h-full bg-white/80">
               <Image
                 src={icon_1}
@@ -47,7 +183,7 @@ const Cards = () => {
               </p>
             </div>
           </div>
-          <div className=' relative group max-lg:w-full hover:scale-[110%] ease-in-out  duration-[0.8s]   overflow-hidden bg-cover bg-center bg-[url("/images/home/cardBg/card-2.png")]  grayscale w-[400px]   h-[300px]'>
+          <div ref={card_2}  className=' relative group max-lg:w-full hover:scale-[110%] ease-in-out  duration-[0.8s]   overflow-hidden bg-cover bg-center bg-[url("/images/home/cardBg/card-2.png")]  grayscale w-[400px]   h-[300px]'>
             <div className="absolute group-hover:hidden flex   top-0 gap-[20px]  justify-center items-center flex-col left-0 w-full h-full bg-white/80">
               <Image
                 src={icon_2}
@@ -78,7 +214,7 @@ const Cards = () => {
               </p>
             </div>
           </div>
-          <div className=' relative group  max-lg:w-full hover:scale-[110%] ease-in-out  duration-[0.8s]   overflow-hidden bg-cover bg-center bg-[url("/images/home/cardBg/card-3.png")]  grayscale w-[400px]   h-[300px]'>
+          <div ref={card_3}  className=' relative group  max-lg:w-full hover:scale-[110%] ease-in-out  duration-[0.8s]   overflow-hidden bg-cover bg-center bg-[url("/images/home/cardBg/card-3.png")]  grayscale w-[400px]   h-[300px]'>
             <div className="absolute group-hover:hidden flex   top-0 gap-[20px]  justify-center items-center flex-col left-0 w-full h-full bg-white/80">
               <Image
                 src={icon_3}
