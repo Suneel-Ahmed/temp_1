@@ -3,7 +3,8 @@ import Image from "next/image";
 import icon_1 from "../../../../public/images/home/cardBg/icon-1.svg";
 import icon_2 from "../../../../public/images/home/cardBg/icon-2.svg";
 import icon_3 from "../../../../public/images/home/cardBg/icon-3.svg";
-
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 const Cards = () => {
   return (
     <div className="w-full flex flex-col">
