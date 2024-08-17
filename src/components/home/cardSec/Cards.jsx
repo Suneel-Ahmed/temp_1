@@ -22,120 +22,239 @@ const card_2 = useRef()
 const card_3 = useRef()
 
   useGSAP(()=>{
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: 'center center',
-        end: `+=${window.innerHeight * (window.innerWidth >= 1024 ? 2 : 4)}`,
-        scrub: 1,
-        pin: true,
-        markers : true,
-        pinSpacing: true,
-      },
-    });
+    const condition =  window.innerWidth < 1024;
+    
+    if(!condition){
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: 'center center',
+          end: `+=${window.innerHeight * (window.innerWidth >= 1024 ? 2 : 4)}`,
+          scrub: 1,
+          pin: true,
+       
+          pinSpacing: true,
+        },
+      });
+  
+      tl.fromTo(
+        heading_1.current,
+        {
+          
+          alpha : 0,
+          
+        },{
+         alpha : 1 ,
+        }
+      )
+      tl.fromTo(
+        heading_2.current,
+        {
+          
+          alpha : 0,
+          
+        },{
+         alpha : 1 ,
+        }
+        
+      )
+      tl.fromTo(
+        heading_3.current,
+        {
+          
+          alpha : 0,
+          
+        },{
+         alpha : 1 ,
+        }
+       
+      )
+      tl.fromTo(
+        heading_para.current,
+        {
+          
+          alpha : 0,
+          
+        },{
+         alpha : 1 ,
+        }
+        
+      )
+      tl.fromTo(
+        borderline.current,
+        {
+          
+          alpha : 0,
+          
+        },{
+         alpha : 1 ,
+        }
+       , "<" 
+      )
+      tl.fromTo(
+        para_2.current,
+        {
+          
+          alpha : 0,
+          
+        },{
+         alpha : 1 ,
+        }
+      
+      )
+      // card 
+      tl.fromTo(
+        card_1.current,
+        {
+          top : "100px",
+          alpha : 0,
+          
+        },{
+          top : "0px",
+         alpha : 1 ,
+        }
+      
+      )
+      tl.fromTo(
+        card_2.current,
+        {
+          top : "100px",
+          alpha : 0,
+          
+        },{
+          top : "0px",
+         alpha : 1 ,
+        }
+      
+      )
+      tl.fromTo(
+        card_3.current,
+        {
+          top : "100px",
+          alpha : 0,
+          
+        },{
+          top : "0px",
+         alpha : 1 ,
+        }
+      
+      )
 
-    tl.fromTo(
-      heading_1.current,
-      {
+    }else{
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: 'top center',
+          end: `90% 80%`,
+          scrub: 1,
+   
+         
+        },
+      });
+      tl.fromTo(
+        heading_1.current,
+        {
+          
+          alpha : 0,
+          
+        },{
+         alpha : 1 ,
+        }
+      )
+      tl.fromTo(
+        heading_2.current,
+        {
+          
+          alpha : 0,
+          
+        },{
+         alpha : 1 ,
+        }
+        , "<"
         
-        alpha : 0,
-        
-      },{
-       alpha : 1 ,
-      }
-    )
-    tl.fromTo(
-      heading_2.current,
-      {
-        
-        alpha : 0,
-        
-      },{
-       alpha : 1 ,
-      }
+      )
+      tl.fromTo(
+        heading_3.current,
+        {
+          
+          alpha : 0,
+          
+        },{
+         alpha : 1 ,
+        }
+       , "<"
+      )
+      tl.fromTo(
+        heading_para.current,
+        {
+          
+          alpha : 0,
+          
+        },{
+         alpha : 1 ,
+        }
+        , "<"
+      )
+      tl.fromTo(
+        borderline.current,
+        {
+          
+          alpha : 0,
+          
+        },{
+         alpha : 1 ,
+        }
+       , "<" 
+      )
+      tl.fromTo(
+        para_2.current,
+        {
+          
+          alpha : 0,
+          
+        },{
+         alpha : 1 ,
+        }
+      , "<"
+      )
+      // card 
+      tl.fromTo(
+        card_1.current,
+        {
+          left : "-100px",
+          alpha : 0,
+          
+        },{
+          left : "0px",
+         alpha : 1 ,
+        }
       
-    )
-    tl.fromTo(
-      heading_3.current,
-      {
-        
-        alpha : 0,
-        
-      },{
-       alpha : 1 ,
-      }
-     
-    )
-    tl.fromTo(
-      heading_para.current,
-      {
-        
-        alpha : 0,
-        
-      },{
-       alpha : 1 ,
-      }
+      )
+      tl.fromTo(
+        card_2.current,
+        {
+          left : "-100px",
+          alpha : 0,
+          
+        },{
+          left : "0px",
+         alpha : 1 ,
+        }
       
-    )
-    tl.fromTo(
-      borderline.current,
-      {
-        
-        alpha : 0,
-        
-      },{
-       alpha : 1 ,
-      }
-     , "<" 
-    )
-    tl.fromTo(
-      para_2.current,
-      {
-        
-        alpha : 0,
-        
-      },{
-       alpha : 1 ,
-      }
-    
-    )
-    // card 
-    tl.fromTo(
-      card_1.current,
-      {
-        top : "100px",
-        alpha : 0,
-        
-      },{
-        top : "0px",
-       alpha : 1 ,
-      }
-    
-    )
-    tl.fromTo(
-      card_2.current,
-      {
-        top : "100px",
-        alpha : 0,
-        
-      },{
-        top : "0px",
-       alpha : 1 ,
-      }
-    
-    )
-    tl.fromTo(
-      card_3.current,
-      {
-        top : "100px",
-        alpha : 0,
-        
-      },{
-        top : "0px",
-       alpha : 1 ,
-      }
-    
-    )
+      )
+      tl.fromTo(
+        card_3.current,
+        {
+          left : "-100px",
+          alpha : 0,
+          
+        },{
+          left : "0px",
+         alpha : 1 ,
+        }
+      
+      )
+    }
 
 
    
