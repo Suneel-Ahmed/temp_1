@@ -4,7 +4,8 @@ import Image from 'next/image'
 import logo from '/public/images/UI/logo.png'
 import { FaBars } from "react-icons/fa6";
 import { RxCross2 } from "react-icons/rx";
-
+import Link from 'next/link';
+// import rou
 const Nav = () => {
 
   const [navToggle , setNavToggle] = useState(false)
@@ -26,15 +27,15 @@ const Nav = () => {
       {/* large screen navbar  start */}
       <div className='flex max-md:hidden justify-center items-center ' >
         <ul className='inline-flex gap-[25px] max-lg:gap-[15px]     text-[14px] ' >
-          <li className=' flex items-center' >Accueil</li>
+          <li className=' flex items-center' > <Link href={'/'} > Accueil </Link></li>
           <li>
             <div className='h-[55px] w-[2px] bg-white' ></div>
           </li>
-          <li className=' flex items-center' >Services</li>
+          <li className=' flex items-center' > <Link href={'/services'} > Services </Link> </li>
           <li>
             <div className='h-[55px] w-[2px] bg-white' ></div>
           </li>
-          <li className=' flex items-center' >Références</li>
+          <li className=' flex items-center' > <Link href={'references'} > Références </Link> </li>
           <li>
             <div className='h-[55px] w-[2px] bg-white' ></div>
           </li>
