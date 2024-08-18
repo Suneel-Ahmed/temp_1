@@ -8,8 +8,8 @@ const Hero = () => {
     const [mute_icon , setMute_icon] = useState(true);
    
   return (
-    <div className='w-full relative h-[89vh] mt-[120px]  bg-gray-950' >
-        <video autoPlay muted = {mute_icon}  playsInline loop className='w-full h-full  object-fill'>
+    <div className='w-full relative h-fit mt-[120px]  bg-gray-950' >
+        <video autoPlay muted = {mute_icon}  playsInline loop className='w-full h-auto  object-fill'>
 					<source src='/images/hero/hero.mp4' type='video/mp4' />
 					Video not supported
 				</video>
