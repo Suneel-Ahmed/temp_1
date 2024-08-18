@@ -15,8 +15,8 @@ const page = () => {
   return (
     <Layout>
       <Hero/>
-      <div className='px-[200px] max-xl:px-[100px] flex justify-center items-center max-lg:px-[50px] w-full min-h-screen bg-white'>
-        <div className='w-full h-full flex gap-[50px] justify-center flex-wrap' >
+      <div className='px-[200px] max-xl:px-[100px] py-[50px] flex justify-center items-center max-lg:px-[50px] w-full min-h-screen bg-white'>
+        <div className='w-full min-h-fit flex gap-[50px] justify-center flex-wrap' >
            {/* card 1  */}
             <div className='w-[315px]  justify-start items-center h-[330px]   flex flex-col gap-[20px] ' >
                 <div className='text-center' >

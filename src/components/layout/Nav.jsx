@@ -5,11 +5,14 @@ import logo from '/public/images/UI/logo.png'
 import { FaBars } from "react-icons/fa6";
 import { RxCross2 } from "react-icons/rx";
 import Link from 'next/link';
-// import rou
+import { usePathname } from 'next/navigation'
+
+
+
 const Nav = () => {
 
   const [navToggle , setNavToggle] = useState(false)
-
+  const pathname = usePathname()
 
   return (
     <>
@@ -27,15 +30,15 @@ const Nav = () => {
       {/* large screen navbar  start */}
       <div className='flex max-md:hidden justify-center items-center ' >
         <ul className='inline-flex gap-[25px] max-lg:gap-[15px]     text-[14px] ' >
-          <li className=' flex items-center' > <Link href={'/'} > Accueil </Link></li>
+          <li className={` flex items-center hover:text-white/80 ${pathname === "/" ? "text-white/80" : "text-white"  } `} > <Link href={'/'} > Accueil </Link></li>
           <li>
             <div className='h-[55px] w-[2px] bg-white' ></div>
           </li>
-          <li className=' flex items-center' > <Link href={'/services'} > Services </Link> </li>
+          <li className={` flex items-center hover:text-white/80 ${pathname === "/services" ? "text-white/80" : "text-white"  } `} > <Link href={'/services'} > Services </Link> </li>
           <li>
             <div className='h-[55px] w-[2px] bg-white' ></div>
           </li>
-          <li className=' flex items-center' > <Link href={'references'} > Références </Link> </li>
+          <li className={` flex items-center hover:text-white/80 ${pathname === "/references" ? "text-white/80" : "text-white"  } `} > <Link href={'references'} > Références </Link> </li>
           <li>
             <div className='h-[55px] w-[2px] bg-white' ></div>
           </li>
@@ -61,11 +64,11 @@ const Nav = () => {
          </div>
           <div className='w-full text-white flex justify-center items-center bg-black h-full py-[30px]' >
                 <ul className='list-none text-[20px] flex items-center flex-col gap-[40px] text-center' >
-                  <li>Accueil</li>
+                  <li className={` flex items-center hover:text-white/80 ${pathname === "/" ? "text-white/80" : "text-white"  } `} ><Link onClick={()=>setNavToggle(false)} href={'/'} > Accueil </Link></li>
                   <li className='w-[62px] h-[3px] bg-white' ></li>
-                  <li>Services</li>
+                  <li className={` flex items-center hover:text-white/80 ${pathname === "/services" ? "text-white/80" : "text-white"  } `} > <Link onClick={()=>setNavToggle(false)} href={'/services'} > Services </Link> </li>
                   <li className='w-[62px] h-[3px] bg-white' ></li>
-                  <li>Références</li>
+                  <li className={` flex items-center hover:text-white/80 ${pathname === "/references" ? "text-white/80" : "text-white"  } `} > <Link onClick={()=>setNavToggle(false)} href={'references'} > Références </Link> </li>
                   <li className='w-[62px] h-[3px] bg-white' ></li>
                   <li>À propos</li>
                 </ul>
