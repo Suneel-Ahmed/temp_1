@@ -16,8 +16,59 @@ import { useGSAP } from "@gsap/react";
 
 const CardSec = () => {
     const containerRef = useRef()
+    const card_1 = useRef();
+    const card_2 = useRef();
+    const card_3 = useRef();
+    const card_4 = useRef();
+    const card_5 = useRef();
+    const card_6 = useRef();
+    const card_7 = useRef();
+
+   
 
     useGSAP(()=>{
+        const condition = window.innerWidth < 1024;
+        if(!condition){ 
+        const tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: containerRef.current,
+              start: "center center",
+              end: `+=${
+                window.innerHeight * (window.innerWidth >= 1024 ? 2 : 4)
+              }`,
+              scrub: 1,
+              pin: true,
+  
+              pinSpacing: true,
+            },
+          });
+
+          tl.fromTo(card_1.current, {alpha: 0},{alpha: 1});
+          tl.fromTo(card_2.current, {alpha: 0},{alpha: 1});
+          tl.fromTo(card_3.current, {alpha: 0},{alpha: 1});
+          tl.fromTo(card_4.current, {alpha: 0},{alpha: 1});
+          tl.fromTo(card_5.current, {alpha: 0},{alpha: 1});
+          tl.fromTo(card_6.current, {alpha: 0},{alpha: 1});
+          tl.fromTo(card_7.current, {alpha: 0},{alpha: 1});
+        }else{
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                  trigger: containerRef.current,
+                  start: "top center",
+                  end: `90% 80%`,
+                  scrub: 1,
+                },
+              });
+
+              
+          tl.fromTo(card_1.current, {alpha: 0},{alpha: 1});
+          tl.fromTo(card_2.current, {alpha: 0},{alpha: 1});
+          tl.fromTo(card_3.current, {alpha: 0},{alpha: 1});
+          tl.fromTo(card_4.current, {alpha: 0},{alpha: 1});
+          tl.fromTo(card_5.current, {alpha: 0},{alpha: 1});
+          tl.fromTo(card_6.current, {alpha: 0},{alpha: 1});
+          tl.fromTo(card_7.current, {alpha: 0},{alpha: 1});
+        }
 
     },{scope : containerRef })
 
@@ -29,7 +80,7 @@ const CardSec = () => {
          
          
           {/* card 1  */}
-          <div className="w-[315px]  justify-start items-center h-[330px]   flex flex-col gap-[20px] ">
+          <div ref={card_1}  className="w-[315px]  justify-start items-center h-[330px]   flex flex-col gap-[20px] ">
             <div className="text-center">
               <Image
                 src={icon_1}
@@ -39,10 +90,10 @@ const CardSec = () => {
               />
             </div>
             <div>
-              <h1 className="text-[25px]"> MONTAGE </h1>
+              <h1 className="text-[clamp(16px,5vw,25px)]"> MONTAGE </h1>
             </div>
             <div>
-              <p className="text-[14px] text-center">
+              <p className="text-[clamp(12px,3vw,14px)] text-center">
                 {" "}
                 Chaque détail est travaillé pour créer une narration fluide et
                 captivante. Ça comprends le dérushage, l'assemblage, le rythme,
@@ -55,7 +106,7 @@ const CardSec = () => {
 
           {/* card 2 */}
 
-          <div className="w-[315px]  justify-start items-center h-[330px]   flex flex-col gap-[20px] ">
+          <div ref={card_2} className="w-[315px]  justify-start items-center h-[330px]   flex flex-col gap-[20px] ">
             <div className="text-center">
               <Image
                 src={icon_2}
@@ -65,10 +116,10 @@ const CardSec = () => {
               />
             </div>
             <div>
-              <h1 className="text-[25px]"> MIXAGE / SFX </h1>
+              <h1 className="text-[clamp(16px,5vw,25px)]"> MIXAGE / SFX </h1>
             </div>
             <div>
-              <p className="text-[14px] text-center">
+              <p className="text-[clamp(12px,3vw,14px)] text-center">
                 Créer une expérience auditive immersive et de haute qualité.
                 Avec le nettoyage des pistes, la synchronisation, l'équilibre
                 des différentes pistes audio, le contrôle de la dynamique, les
@@ -80,7 +131,7 @@ const CardSec = () => {
 
           {/* card 3 */}
 
-          <div className="w-[315px]  justify-start items-center h-[330px]   flex flex-col gap-[20px] ">
+          <div ref={card_3} className="w-[315px]  justify-start items-center h-[330px]   flex flex-col gap-[20px] ">
             <div className="text-center">
               <Image
                 src={icon_3}
@@ -90,10 +141,10 @@ const CardSec = () => {
               />
             </div>
             <div>
-              <h1 className="text-[25px]"> ÉTALONNAGE </h1>
+              <h1 className="text-[clamp(16px,5vw,25px)]"> ÉTALONNAGE </h1>
             </div>
             <div>
-              <p className="text-[14px] text-center">
+              <p className="text-[clamp(12px,3vw,14px)] text-center">
                 Optimiser et harmoniser la luminance et la chrominance pour une
                 esthétique cohérente et professionnelle. Gérer les espaces
                 colorimétriques, l'application des LUTs appropriées ou le
@@ -105,7 +156,7 @@ const CardSec = () => {
 
           {/* card 4 */}
 
-          <div className="w-[315px]  justify-start items-center h-[330px]   flex flex-col gap-[20px] ">
+          <div ref={card_4} className="w-[315px]  justify-start items-center h-[330px]   flex flex-col gap-[20px] ">
             <div className="text-center">
               <Image
                 src={icon_4}
@@ -115,10 +166,10 @@ const CardSec = () => {
               />
             </div>
             <div>
-              <h1 className="text-[25px]"> EFFETS / VFX </h1>
+              <h1 className="text-[clamp(16px,5vw,25px)]"> EFFETS / VFX </h1>
             </div>
             <div>
-              <p className="text-[14px] text-center">
+              <p className="text-[clamp(12px,3vw,14px)] text-center">
                 Ajouter des éléments numériques pour créer des séquences
                 impressionnantes ou des détails uniques. L'incrustation
                 d'images, la suppression d'objets indésirables, le tracking et
@@ -131,7 +182,7 @@ const CardSec = () => {
 
           {/* card 5 */}
 
-          <div className="w-[315px]  justify-start items-center h-[330px]   flex flex-col gap-[20px] ">
+          <div ref={card_5} className="w-[315px]  justify-start items-center h-[330px]   flex flex-col gap-[20px] ">
             <div className="text-center">
               <Image
                 src={icon_5}
@@ -141,10 +192,10 @@ const CardSec = () => {
               />
             </div>
             <div>
-              <h1 className="text-[25px]"> MOTION DESIGN </h1>
+              <h1 className="text-[clamp(16px,5vw,25px)]"> MOTION DESIGN </h1>
             </div>
             <div>
-              <p className="text-[14px] text-center">
+              <p className="text-[clamp(12px,3vw,14px)] text-center">
                 Combine graphisme et animation pour créer des contenus
                 dynamiques et attrayants. Il apporte une dimension
                 supplémentaire qui capte l’attention et engage l’audience
@@ -156,7 +207,7 @@ const CardSec = () => {
 
           {/* card 6 */}
 
-          <div className="w-[315px]  justify-start items-center h-[330px]   flex flex-col gap-[20px] ">
+          <div ref={card_6} className="w-[315px]  justify-start items-center h-[330px]   flex flex-col gap-[20px] ">
             <div className="text-center">
               <Image
                 src={icon_6}
@@ -166,10 +217,10 @@ const CardSec = () => {
               />
             </div>
             <div>
-              <h1 className="text-[25px]"> HABILLAGE </h1>
+              <h1 className="text-[clamp(16px,5vw,25px)]"> HABILLAGE </h1>
             </div>
             <div>
-              <p className="text-[14px] text-center">
+              <p className="text-[clamp(12px,3vw,14px)] text-center">
                 Renforce l'identité visuelle d'une vidéo et améliore son attrait
                 global. Cela comprend l'intégration d'éléments graphiques tels
                 que les titres, les sous-titres, les logos, les animations de
@@ -180,7 +231,7 @@ const CardSec = () => {
 
           {/* card 7 */}
 
-          <div className="w-[315px]  justify-start items-center h-[330px]   flex flex-col gap-[20px] ">
+          <div ref={card_7} className="w-[315px]  justify-start items-center h-[330px]   flex flex-col gap-[20px] ">
             <div className="text-center">
               <Image
                 src={icon_7}
@@ -190,10 +241,10 @@ const CardSec = () => {
               />
             </div>
             <div>
-              <h1 className="text-[25px]"> EXPORT / LIVRAISON </h1>
+              <h1 className="text-[clamp(16px,5vw,25px)]"> EXPORT / LIVRAISON </h1>
             </div>
             <div>
-              <p className="text-[14px] text-center">
+              <p className="text-[clamp(12px,3vw,14px)] text-center">
                 Bien exécutée, cette étape permet d'atteindre la qualité
                 optimale sur les supports prévus. Elle concerne le choix du
                 codec, le débit, la taille... Le roundtrip pour passer d'un

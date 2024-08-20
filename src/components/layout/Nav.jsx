@@ -38,11 +38,11 @@ const Nav = () => {
           <li>
             <div className='h-[55px] w-[2px] bg-white' ></div>
           </li>
-          <li className={` flex items-center raleway hover:text-white/80 ${pathname === "/references" ? "text-white/80" : "text-white"  } `} > <Link href={'references'} > Références </Link> </li>
+          <li className={` flex items-center raleway hover:text-white/80 ${pathname === "/references" ? "text-white/80" : "text-white"  } `} > <Link href={'/references'} > Références </Link> </li>
           <li>
             <div className='h-[55px] w-[2px] bg-white' ></div>
           </li>
-          <li className=' flex items-center raleway ' >À propos</li>
+          <li className={` flex items-center raleway hover:text-white/80 ${pathname === "/about" ? "text-white/80" : "text-white"  } `} > <Link onClick={()=>setNavToggle(false)} href={'/about'} > À propos </Link> </li>
           
         </ul>
       </div>
@@ -68,9 +68,10 @@ const Nav = () => {
                   <li className='w-[62px] h-[3px] bg-white' ></li>
                   <li className={` flex items-center raleway hover:text-white/80 ${pathname === "/services" ? "text-white/80" : "text-white"  } `} > <Link onClick={()=>setNavToggle(false)} href={'/services'} > Services </Link> </li>
                   <li className='w-[62px] h-[3px] bg-white' ></li>
-                  <li className={` flex items-center raleway hover:text-white/80 ${pathname === "/references" ? "text-white/80" : "text-white"  } `} > <Link onClick={()=>setNavToggle(false)} href={'references'} > Références </Link> </li>
+                  <li className={` flex items-center raleway hover:text-white/80 ${pathname === "/references" ? "text-white/80" : "text-white"  } `} > <Link onClick={()=>setNavToggle(false)} href={'/references'} > Références </Link> </li>
                   <li className='w-[62px] h-[3px] bg-white' ></li>
-                  <li>À propos</li>
+                  <li className={` flex items-center raleway hover:text-white/80 ${pathname === "/about" ? "text-white/80" : "text-white"  } `} > <Link onClick={()=>setNavToggle(false)} href={'/about'} > À propos </Link> </li>
+                  
                 </ul>
           </div>
     </div>
